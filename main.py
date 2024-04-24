@@ -52,6 +52,13 @@ while True:
             for row in result:
                 print(row)
     elif choice == '3':
+        name = input("Ievadi vārdu: ")
+        cursor.execute("SELECT * FROM names  name=?", (name,))
+        result = cursor.fetchall()
+        if result:
+            print("Name found:")
+            for row in result:
+                print(row)
         # atlasīt top 5 vārdus pēc populāritātes
         # https://www.w3schools.com/sql/sql_orderby.asp (ORDER BY)
         # https://www.w3schools.com/sql/sql_top.asp (LIMIT)
